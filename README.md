@@ -49,6 +49,6 @@ https://cacoo.com/diagrams/TuiqyZidYBxrafH6/D45C7
 https://app.diagrams.net/#G1lzqZN-Fr6DqGm2HmZ-XOPqnEZEymHt22
 
 ## 画面遷移図
-https://drive.google.com/file/d/1lzqZN-Fr6DqGm2HmZ-XOPqnEZEymHt22/view?usp=sharing
+https://drive.google.com/file/d/1M3ASFfbjjha4N0-JNLTdVXSkNWXGKMjg/view?usp=sharing
 
 
