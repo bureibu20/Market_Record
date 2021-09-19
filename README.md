@@ -11,7 +11,7 @@
 
 ## 開発言語
 ruby 2.6.5  
-rails 6.0.3
+rails 5.2.5
 
 ## 就職Termの技術
 devise
@@ -19,12 +19,12 @@ devise
 Ajaxを使ったコメント機能 
 
 ## カリキュラム外の技術
-impressionist
+impressionist  
 Redcarpet
 
 ## カリキュラムの技術
-rails_admin
-kaminari
+rails_admin  
+kaminari  
 cancancan
 
 ## 実行手順
