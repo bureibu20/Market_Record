@@ -20,7 +20,7 @@ Ajaxを使ったコメント機能
 
 ## カリキュラム外の技術
 impressionist
-qiita-markdown
+Redcarpet
 
 ## カリキュラムの技術
 rails_admin
