@@ -15,7 +15,7 @@ rails 5.2.5
 
 ## 就職Termの技術
 devise  
-フォロー機能  
+お気に入り機能  
 Ajaxを使ったコメント機能 
 
 ## カリキュラム外の技術
@@ -50,5 +50,4 @@ https://app.diagrams.net/#G1lzqZN-Fr6DqGm2HmZ-XOPqnEZEymHt22
 
 ## 画面遷移図
 https://drive.google.com/file/d/1M3ASFfbjjha4N0-JNLTdVXSkNWXGKMjg/view?usp=sharing
-
 
