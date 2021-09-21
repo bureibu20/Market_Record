@@ -46,7 +46,7 @@ https://docs.google.com/spreadsheets/d/1-M99AYAB3KbxqUyolkHI6PzL3RDMEY_eMcK4PVKS
 https://cacoo.com/diagrams/TuiqyZidYBxrafH6/D45C7
 
 ## ER図
-https://app.diagrams.net/#G1lzqZN-Fr6DqGm2HmZ-XOPqnEZEymHt22
+https://drive.google.com/file/d/1lzqZN-Fr6DqGm2HmZ-XOPqnEZEymHt22/view?usp=sharing
 
 ## 画面遷移図
 https://drive.google.com/file/d/1M3ASFfbjjha4N0-JNLTdVXSkNWXGKMjg/view?usp=sharing
