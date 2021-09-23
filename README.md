@@ -22,6 +22,7 @@ Ajaxを使ったコメント機能
 impressionist  
 Redcarpet
 rouge
+FontAwsome
 
 ## カリキュラムの技術
 rails_admin  
