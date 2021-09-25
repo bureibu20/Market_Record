@@ -49,7 +49,9 @@ https://cacoo.com/diagrams/TuiqyZidYBxrafH6/D45C7
 
 ## ER図
 https://drive.google.com/file/d/1lzqZN-Fr6DqGm2HmZ-XOPqnEZEymHt22/view?usp=sharing
+<img width="673" alt="スクリーンショット 2021-09-25 20 47 37" src="https://user-images.githubusercontent.com/80628409/134770617-d44ae298-279c-4cca-aeac-e77f7fbc00c3.png">
 
 ## 画面遷移図
 https://drive.google.com/file/d/1M3ASFfbjjha4N0-JNLTdVXSkNWXGKMjg/view?usp=sharing
+<img width="961" alt="スクリーンショット 2021-09-25 20 48 37 1" src="https://user-images.githubusercontent.com/80628409/134770622-122e9c2c-f5c4-4a68-9461-968f584bff4c.png">
 
