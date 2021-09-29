@@ -19,6 +19,8 @@ gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 gem 'impressionist'
 gem 'kaminari'
+gem 'redcarpet'
+gem 'rouge'
 
 
 group :development, :test do
