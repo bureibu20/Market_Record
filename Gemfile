@@ -24,6 +24,7 @@ gem 'rouge'
 gem 'font-awesome-sass'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

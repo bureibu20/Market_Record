@@ -15,60 +15,6 @@
  *= require_self
  */
  @import 'rouge';
- @import "font-awesome-sprockets";
- @import "font-awesome";
-
-
-html{
-  height:100%;
-}
-
-body {
-  text-align: center;
-  }    
-
-header {
-  height: 80px;
-  width: 100%;
-  background-color: #2B2B2B;
-  position:absolute;
-  top: 0;
-}
-.left {
-  float: left;
-  font-size: large;
-}
-.float_right{
-  float:right;
-}
-.right{
-  float: left;
-  font-size: large;
-}
-.clearfix ul {
-  margin: 0px; 
-}
-header li {
-  list-style: none;
-  padding: 30px 10px;  
-  .link{
-    color: white;
-  }
-}
-main{
-  padding: 80px;
-}
-.footer {
-  height: 70px;
-  width: 100%;
-  background-color: #2B2B2B;
-  margin: auto;
-  color: white;
-  position:absolute;
-  bottom: 0;
-}
-footer p{
-  font-size: 1rem;
-  margin: 0%;
-  padding-top: 25px; 
-}
+ @import 'font-awesome-sprockets';
+ @import 'font-awesome';
+ @import "articles"
