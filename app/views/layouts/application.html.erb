@@ -28,16 +28,18 @@
               <i class="fas fa-address-card size"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><a><%= link_to "アカウント詳細", articles_path %></a></li>
+              <li><a><%= link_to "アカウント編集", edit_user_registration_path %></a></li>
               <li><a><%= link_to "お気に入りユーザー一覧", stocks_path, class: "glyphicon glyphicon-thumbs-up" %></a></li>
               <li><a><%= link_to "ストック記事一覧", articles_path, class: "glyphicon glyphicon-paperclip" %></a></li>
               <li><a><%= link_to "ログアウト", articles_path, class: "glyphicon glyphicon-ok" %></a></li>
               <li><a><%= link_to "退会処理", articles_path, class: "glyphicon glyphicon-pencil" %></a></li>
-              <% if current_user.admin? %>
-              <li role="separator" class="divider"></li>
-              <li><a><%= link_to "記事一覧", rails_admin_path %></a></li>
-              <li><a><%= link_to "ユーザー一覧", edit_user_registration_path %></a></li>
-              <li><a><%= link_to "タグ一覧", destroy_user_session_path, method: :delete %></a></li>
+              <% if user_signed_in? %>
+                <% if current_user.admin? %>
+                  <li role="separator" class="divider"></li>
+                  <li><a><%= link_to "記事一覧", rails_admin_path %></a></li>
+                  <li><a><%= link_to "ユーザー一覧", edit_user_registration_path %></a></li>
+                  <li><a><%= link_to "タグ一覧", destroy_user_session_path, method: :delete %></a></li>
+                <% end %>
               <% end %>
             </ul>
           </li>
