@@ -2,6 +2,11 @@
 <td><%= article.content %></td>
 <td><%= article.user %></td>
 <td><%= article.impressions_count %></td>
+<td>
+  <% article.tags.each do |tag| %>
+    <%= tag.name %>
+  <% end %>
+</td>
 <% if current_user.liked_by?(article.id) %>
   <td>
     <%= link_to destroy_like_path(article), class: "like-link", method: :DELETE, remote: true do %>
