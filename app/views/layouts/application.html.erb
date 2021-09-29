@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MarketRecord</title>
+    <title>OriginalTest</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body>
-
-    <li>
-      <%= link_to 'ユーザー一覧', users_path if user_signed_in? %>
-    </li>
+    <header class="clearfix">
+      <ul>
+        <li class="left"><%= link_to 'Market Record', articles_path, class: "link" if user_signed_in? %></li>
+        <li class="left">
+          <%= form_with(model: @article, method: :get, local: true, ) do |form| %>
+            <%= form.text_field :search_title, placeholder:"記事タイトル検索" %>
+            <%= form.submit '検索' , name: 'search', class:"btn btn-warning" %>
+          <% end %>
+        </li>
+      <div class="float_right">
+        <li class="right"><%= link_to '投稿する', new_article_path, class:"btn btn-warning" if user_signed_in? %></li>
+        <li class="right"><a href="#">ログイン</a></li>
+      </div>  
+      </ul>
+    </header>
+    <main>
+    <%= link_to 'ユーザー一覧', users_path if user_signed_in? %>
 
     <% if user_signed_in? %>
-      <%= link_to "ブログ投稿", articles_path %>
+      <%= link_to "記事投稿", articles_path %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to "新規登録", new_user_registration_path %>
       <%= link_to "ログイン", new_user_session_path %>
     <% end %>
-
+    
     <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>
     <% end %>
@@ -32,5 +45,13 @@
       <p class="alert alert-error"><%= alert %></p>
     <% end %>
     <%= yield %>
+    </main>
+    
+    <footer class="footer">
+    <div class="container">
+      <p class="footer-text">Copyright 2021 Market Record All Rights Reserved.</p>
+    </div>
+    </footer>
+
   </body>
 </html>
