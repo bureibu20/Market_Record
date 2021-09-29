@@ -14,17 +14,35 @@
   <body>
     <header class="clearfix">
       <ul>
-        <li class="left"><%= link_to 'Market Record', articles_path, class: "link" if user_signed_in? %></li>
+        <li class="left"><%= link_to 'Market Record', articles_path, class: "link"%></li>
         <li class="left">
           <%= form_with(model: @article, method: :get, local: true, ) do |form| %>
             <%= form.text_field :search_title, placeholder:"記事タイトル検索" %>
             <%= form.submit '検索' , name: 'search', class:"btn btn-warning" %>
           <% end %>
         </li>
-      <div class="float_right">
-        <li class="right"><%= link_to '投稿する', new_article_path, class:"btn btn-warning" if user_signed_in? %></li>
-        <li class="right"><a href="#">ログイン</a></li>
-      </div>  
+        <div class="float_right">
+          <li class="right"><%= link_to '投稿する', new_article_path, class:"btn btn-warning btn-lg" if user_signed_in? %></li>
+          <li class="right">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-address-card size"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a><%= link_to "アカウント詳細", articles_path %></a></li>
+              <li><a><%= link_to "お気に入りユーザー一覧", stocks_path, class: "glyphicon glyphicon-thumbs-up" %></a></li>
+              <li><a><%= link_to "ストック記事一覧", articles_path, class: "glyphicon glyphicon-paperclip" %></a></li>
+              <li><a><%= link_to "ログアウト", articles_path, class: "glyphicon glyphicon-ok" %></a></li>
+              <li><a><%= link_to "退会処理", articles_path, class: "glyphicon glyphicon-pencil" %></a></li>
+              <% if current_user.admin? %>
+              <li role="separator" class="divider"></li>
+              <li><a><%= link_to "記事一覧", rails_admin_path %></a></li>
+              <li><a><%= link_to "ユーザー一覧", edit_user_registration_path %></a></li>
+              <li><a><%= link_to "タグ一覧", destroy_user_session_path, method: :delete %></a></li>
+              <% end %>
+            </ul>
+          </li>
+
+        </div>  
       </ul>
     </header>
     <main>
