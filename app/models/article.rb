@@ -4,6 +4,7 @@ class Article < ApplicationRecord
   has_many :stocks, dependent: :destroy
   has_many :stock_users, through: :stocks, source: :user
   has_many :comments, dependent: :destroy
+  has_many :likes
   # 現在ログインしているユーザーidを受け取り、記事をストックする
   def stock(user)
     stocks.create(user_id: user.id)

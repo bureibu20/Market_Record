@@ -17,14 +17,8 @@
 
   <tbody>
     <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.content %></td>
-        <td><%= article.user %></td>
-        <td><%= article.impressions_count %></td>
-        <td><%= link_to 'Show', article, class: 'btn btn-primary' %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr id="article_<%= article.id %>">
+        <%= render 'article', article: article %>
       </tr>
     <% end %>
   </tbody>
