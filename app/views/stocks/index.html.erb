@@ -1,0 +1,10 @@
+<% @stock_articles.each do |article| %>
+  <p><%= article.title %></p>
+  <p><%= article.user.id %></p>
+
+<% end %>
+
+<!-- 10件毎にページネーション -->
+<div class="paginate">
+  <%= paginate @stock_articles %>
+</div>
