@@ -7,6 +7,7 @@ class Article < ApplicationRecord
   has_many :likes
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
+  scope :search_title, -> (title) { where("title LIKE ?", "%#{title}%") }
   # 現在ログインしているユーザーidを受け取り、記事をストックする
   def stock(user)
     stocks.create(user_id: user.id)
