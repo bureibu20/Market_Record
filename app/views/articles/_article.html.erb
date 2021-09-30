@@ -1,6 +1,6 @@
 <td><%= article.title %></td>
 <td><%= article.content %></td>
-<td><%= article.user %></td>
+<td><%= article.user.name %></td>
 <td>
   <% article.tags.each do |tag| %>
     <%= tag.name %>
