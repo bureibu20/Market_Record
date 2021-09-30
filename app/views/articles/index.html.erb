@@ -1,9 +1,11 @@
+<br>
 <% if current_user.try(:admin?) %>
   <h1>Articles_admin</h1>
 <% else %>
   <h1>Articles</h1>
 <% end %>
-
+<br>
+<br>
 <table>
   <thead>
     <tr>
@@ -27,12 +29,12 @@
 </table>
 
 <br>
-
-
-<%= link_to 'New Article', new_article_path %>
-
 <h3> PV数ランキング </h3>
 <% @rank_articles.each do |t| %>
   PV数
   <%= t.impressions_count %>
 <% end %>
+<br>
+<br>
+
+<%= link_to 'New Article', new_article_path %>

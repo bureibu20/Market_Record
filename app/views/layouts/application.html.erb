@@ -49,7 +49,7 @@
     </header>
     <main>
     <%= link_to 'ユーザー一覧', users_path if user_signed_in? %>
-
+    <br>
     <% if user_signed_in? %>
       <%= link_to "記事投稿", articles_path %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
