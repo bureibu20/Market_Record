@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OriginalTest</title>
+    <title>Martket Record</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,31 +14,29 @@
   <body>
     <header class="clearfix">
       <ul>
-        <li class="left"><%= link_to 'Market Record', articles_path, class: "link"%></li>
-        <li class="left">
+        <li class="left1"><%= link_to 'Market Record', articles_path, class: "link"%></li>
+        <li class="left2">
           <%= form_with(model: @article, method: :get, local: true, ) do |form| %>
             <%= form.text_field :search_title, placeholder:"記事タイトル検索" %>
             <%= form.submit '検索' , name: 'search', class:"btn btn-warning" %>
           <% end %>
         </li>
         <div class="float_right">
-          <li class="right"><%= link_to '投稿する', new_article_path, class:"btn btn-warning btn-lg" if user_signed_in? %></li>
-          <li class="right">
+          <li class="right_article_post"><%= link_to '記事を投稿する', new_article_path, class:"btn btn-warning btn-lg" if user_signed_in? %></li>
+          <li class="right_icon">
             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-address-card size"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><a><%= link_to "アカウント編集", edit_user_registration_path %></a></li>
+              <li><a><%= link_to "アカウント詳細", edit_user_registration_path %></a></li>
               <li><a><%= link_to "お気に入りユーザー一覧", stocks_path, class: "glyphicon glyphicon-thumbs-up" %></a></li>
-              <li><a><%= link_to "ストック記事一覧", articles_path, class: "glyphicon glyphicon-paperclip" %></a></li>
-              <li><a><%= link_to "ログアウト", articles_path, class: "glyphicon glyphicon-ok" %></a></li>
+              <li><a><%= link_to "ストック記事一覧", stocks_path, class: "glyphicon glyphicon-paperclip" %></a></li>
+              <li><a><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-ok" %></a></li>
               <li><a><%= link_to "退会処理", articles_path, class: "glyphicon glyphicon-pencil" %></a></li>
               <% if user_signed_in? %>
                 <% if current_user.admin? %>
-                  <li role="separator" class="divider"></li>
-                  <li><a><%= link_to "記事一覧", rails_admin_path %></a></li>
-                  <li><a><%= link_to "ユーザー一覧", edit_user_registration_path %></a></li>
-                  <li><a><%= link_to "タグ一覧", destroy_user_session_path, method: :delete %></a></li>
+                <li role="separator" class="divider"></li>
+                <li><a><%= link_to "管理画面", rails_admin_path %></a></li>
                 <% end %>
               <% end %>
             </ul>
@@ -47,17 +45,9 @@
         </div>  
       </ul>
     </header>
+
     <main>
-    <%= link_to 'ユーザー一覧', users_path if user_signed_in? %>
     <br>
-    <% if user_signed_in? %>
-      <%= link_to "記事投稿", articles_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
-    
     <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>
     <% end %>
@@ -65,8 +55,8 @@
       <p class="alert alert-error"><%= alert %></p>
     <% end %>
     <%= yield %>
+    <br>
     </main>
-    
     <footer class="footer">
     <div class="container">
       <p class="footer-text">Copyright 2021 Market Record All Rights Reserved.</p>
