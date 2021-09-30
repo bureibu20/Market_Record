@@ -38,6 +38,7 @@ $ rails db:create && rails db:migrate
 $ rails s
 ```
 
+
 ## カタログ設計
 https://docs.google.com/spreadsheets/d/1-M99AYAB3KbxqUyolkHI6PzL3RDMEY_eMcK4PVKS3JY/edit#gid=242979144
 
@@ -53,4 +54,4 @@ https://drive.google.com/file/d/1lzqZN-Fr6DqGm2HmZ-XOPqnEZEymHt22/view?usp=shari
 
 ## 画面遷移図
 https://drive.google.com/file/d/1M3ASFfbjjha4N0-JNLTdVXSkNWXGKMjg/view?usp=sharing
-<img width="961" alt="スクリーンショット 2021-09-25 20 48 37 1" src="https://user-images.githubusercontent.com/80628409/134770622-122e9c2c-f5c4-4a68-9461-968f584bff4c.png">
+<img width="810" alt="スクリーンショット 2021-09-30 17 37 18" src="https://user-images.githubusercontent.com/80628409/135418215-aead0421-85d4-4d67-a4a8-5680fe62a379.png">
