@@ -1,5 +1,3 @@
-<br>
-
 <div class="test">
 <table align="center">
   <thead>
@@ -19,6 +17,7 @@
     <% @articles.each do |article| %>
       <tr id="article_<%= article.id %>">
         <%= render 'article', article: article %>
+        <br>
       </tr>
     <% end %>
   </tbody>
