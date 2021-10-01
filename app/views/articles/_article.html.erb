@@ -1,3 +1,8 @@
+<td>
+<% if current_user = article.user %>
+<img src=<%= article.user.image %> class = "icon_image">
+<% end %>
+</td>
 <td><%= article.user.name %></td>
 <td><%= article.title %></td>
 <td><%= article.content %></td>
