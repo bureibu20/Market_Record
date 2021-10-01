@@ -4,6 +4,7 @@ class StocksController < ApplicationController
     stock_articles = Stock.get_stock_articles(current_user)
     # 取得した記事を10件毎にページネーションさせるためにpaginate_arrayメソッドを使う
     @stock_articles = Kaminari.paginate_array(stock_articles).page(params[:page]).per(10)
+    @stocks = current_user.stocks
   end
 
   def create

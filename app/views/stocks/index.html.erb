@@ -1,8 +1,25 @@
-<% @stock_articles.each do |article| %>
-  <p><%= article.title %></p>
-  <p><%= article.user.id %></p>
 
-<% end %>
+<table border="1" align="center">
+  <thead>
+  <tr>
+    <th>投稿者</th>
+    <th>タイトル</th>
+    <th>内容</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% if @stocks.present? %>
+    <% @stocks.each do |stock| %>
+    
+      <tr>
+        <td><%= stock.article.user.name %></td>
+        <td><%= stock.article.title %></td>
+        <td><%= stock.article.content %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
 
 <!-- 10件毎にページネーション -->
 <div class="paginate">
