@@ -2,14 +2,15 @@
 <img src=<%= article.user.image %> class = "icon_image">
 </td>
 <td><%= article.user.name %></td>
-<td><%= article.title %></td>
-<td><%= article.content %></td>
+<td><%= article.title.truncate(20) %></td>
+<td><%= article.content.truncate(30) %></td>
 <td>
   <% article.tags.each do |tag| %>
-    <%= tag.name %>
+    <i class="fas fa-tags"><%= tag.name %>
   <% end %>
 </td>
-<td><%= article.impressions_count %></td>
+<td><i class="fas fa-eye"></i><%= article.impressions_count %></td>
+
 <% if current_user.liked_by?(article.id) %>
   <td>
     <%= link_to destroy_like_path(article), class: "like-link", method: :DELETE, remote: true do %>
@@ -25,8 +26,13 @@
     <%= article.likes.count %>
   </td>
 <% end %>
+<%# binding.irb %>
+<td><%= render partial: "articles/follow_form", locals: { user: article.user } %></td>
 <td><%= link_to 'Show', article %></td>
 <% if article.user == current_user %>
 <td><%= link_to 'Edit', edit_article_path(article) %></td>
 <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
+
+
+ 

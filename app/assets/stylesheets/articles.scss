@@ -1,11 +1,10 @@
   html{
     height:100%; 
+    
   }
-  main{
-    font-size:large;
+  body{
     text-align: center;
   }
-
   header {
     height: 80px;
     width: 100%;
@@ -59,7 +58,10 @@
 
   .size{
     font-size: 2em;
-    color:white;
+  }
+  .size_top_icon{
+    font-size: 2em;
+    color: white;
   }
   .top_solid {
     border: 2px solid #000000;
@@ -69,14 +71,12 @@
   .index-article{
     text-align: center;
   }
-
-  .test{
-    text-align: center;
-    margin:auto
-  }
   .icon_image {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 100px;
     object-fit: cover;
+  }
+  .image_form{
+    margin: auto;
   }

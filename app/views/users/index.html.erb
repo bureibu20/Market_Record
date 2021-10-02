@@ -2,5 +2,5 @@
   <% @users.each do |user| %>
     <%= user.name %>
     <%= user.email %>
-    <%= render 'follow_form', user: user %>
+    <%= render 'follow_user', user: user %>
   <% end %>
