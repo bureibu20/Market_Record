@@ -28,10 +28,10 @@
 <% end %>
 <%# binding.irb %>
 <td><%= render partial: "articles/follow_form", locals: { user: article.user } %></td>
-<td><%= link_to 'Show', article %></td>
+<td><%= link_to '詳細', article, class: 'btn btn-default' %></td>
 <% if article.user == current_user %>
-<td><%= link_to 'Edit', edit_article_path(article) %></td>
-<td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<td><%= link_to '編集', edit_article_path(article) %></td>
+<td><%= link_to '削除', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
 
 
