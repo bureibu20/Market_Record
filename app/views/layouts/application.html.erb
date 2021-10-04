@@ -25,7 +25,7 @@
           <li class="right_article_post"><%= link_to '記事を投稿する', new_article_path, class:"btn btn-warning btn-lg" if user_signed_in? %></li>
           <li class="right_icon">
             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-address-card size"></i>
+              <i class="fas fa-address-card size_top_icon"></i>
             </a>
             <ul class="dropdown-menu">
               <li><a><%= link_to "アカウント詳細", edit_user_registration_path %></a></li>
@@ -45,9 +45,9 @@
         </div>  
       </ul>
     </header>
-
-    <main>
     <br>
+    <br>
+    <div class="main">
     <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>
     <% end %>
@@ -56,11 +56,11 @@
     <% end %>
     <%= yield %>
     <br>
-    </main>
     <footer class="footer">
     <div class="container">
       <p class="footer-text">Copyright 2021 Market Record All Rights Reserved.</p>
     </div>
+    <div>
     </footer>
 
   </body>

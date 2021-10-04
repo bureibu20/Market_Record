@@ -1,33 +1,50 @@
-<br>
-<div class="index-article">
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>User</th>
-      <th><i class="fas fa-tags"></i></th>
-      <th><i class="fas fa-eye"></i>タグ</th>
-      <th>いいね</th>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr id="article_<%= article.id %>">
-        <%= render 'article', article: article %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="column col-lg-2">
+      <h2> HOME </h2>
+      <br>
+      <br>
+      <h3> いいねランキング </h3>
+      <br>
+      <br>
+      <h3> トレンドライン </h3>
+      <% @rank_articles.each do |t| %>
+        PV数
+        <%= t.impressions_count %>
+      <% end %>
+      <br>
+      <br>
+      <br>
+      <h3> ユーザー一覧 </h3>
+      <%= link_to 'user', users_path if user_signed_in? %>
+    </div>
+    <div class="column col-lg-10">
+      <table align="center">
+        <thead>
+          <tr>
+            <th>icon</th>
+            <th>User</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th> タグ </th>
+            <th> 閲覧数 </th>
+            <th> いいね </th>
+            <th colspan="5"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @articles.each do |article| %>
+            <tr id="article_<%= article.id %>">
+              <%#= render "follow_form", user: article.user %>
+              <%= render 'article', article: article %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
-<br>
-<h3> PV数ランキング </h3>
-<% @rank_articles.each do |t| %>
-  PV数
-  <%= t.impressions_count %>
-<% end %>
-<br>
-<br>
-<li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
