@@ -14,7 +14,13 @@
   <body>
     <header class="clearfix">
       <ul>
-        <li class="left1"><%= link_to 'Market Record', articles_path, class: "link"%></li>
+        <li class="left1">
+        <% if user_signed_in? %>
+          <%= link_to 'Market Record', articles_path, class: "link"%>
+        <% else %>  
+          <%= link_to 'Market Record', root_path, class: "link"%>
+          <% end %>
+        </li>
         <li class="left2">
           <%= form_with(model: @article, method: :get, local: true, ) do |form| %>
             <%= form.text_field :search_title, placeholder:"記事タイトル検索" %>
@@ -56,11 +62,9 @@
     <% end %>
     <%= yield %>
     <br>
-    <footer class="footer">
-    <div class="container">
+    <br>
+    <footer>
       <p class="footer-text">Copyright 2021 Market Record All Rights Reserved.</p>
-    </div>
-    <div>
     </footer>
 
   </body>

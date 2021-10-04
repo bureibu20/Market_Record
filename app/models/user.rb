@@ -10,9 +10,11 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :likes
+  
   def liked_by?(article_id)
     likes.where(article_id: article_id).exists?
   end
+
   def follow!(other_user)
     active_relationships.create!(followed_id: other_user.id)
   end
@@ -23,11 +25,18 @@ class User < ApplicationRecord
   def unfollow!(other_user)
     active_relationships.find_by(followed_id: other_user.id).destroy
   end
+
   mount_uploader :image, ImageUploader
+  
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲスト"
+    end
+  end
+  def self.admin_guest
+    find_or_create_by!(name: '管理者ゲスト',email: 'admin_guest@example.com', admin: true) do |user|
+      user.password = SecureRandom.alphanumeric()
     end
   end
 end
