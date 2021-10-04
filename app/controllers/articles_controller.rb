@@ -67,6 +67,8 @@ class ArticlesController < ApplicationController
 
   def top
   end
+  
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -78,4 +80,5 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :content, :impressions_count, :user_id, { tag_ids: [] })
     end
+    
 end
