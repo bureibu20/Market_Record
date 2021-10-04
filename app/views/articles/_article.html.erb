@@ -1,5 +1,8 @@
 <td>
-<img src=<%= article.user.image %> class = "icon_image">
+<%= link_to(article) do %>
+　<img src=<%= article.user.image %> class = "icon_image">
+<% end %>
+
 </td>
 <td><%= article.user.name %></td>
 <td><%= article.title.truncate(20) %></td>
@@ -33,7 +36,7 @@
 <%# binding.irb %>
 <td><%= link_to '詳細', article, class: 'btn btn-default' %></td>
 <% if article.user == current_user %>
-<td><%= link_to "", edit_article_path(article), class: "glyphicon glyphicon-edit", title: "編集する" %></td>
+<td><%= link_to "", edit_article_path(article), class: "glyphicon glyphicon-edit" %></td>
 <td><%= link_to "", article, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "glyphicon glyphicon-trash delete-icon", title: "削除する" %></td>
 <% end %>
 
