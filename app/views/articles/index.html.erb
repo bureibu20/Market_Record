@@ -32,6 +32,7 @@
             <th> タグ </th>
             <th> 閲覧数 </th>
             <th> いいね </th>
+            <th> ストック </th>
             <th colspan="5"></th>
           </tr>
         </thead>
@@ -39,7 +40,6 @@
         <tbody>
           <% @articles.each do |article| %>
             <tr id="article_<%= article.id %>">
-              <%#= render "follow_form", user: article.user %>
               <%= render 'article', article: article %>
             </tr>
           <% end %>
