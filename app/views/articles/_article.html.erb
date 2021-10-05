@@ -1,8 +1,7 @@
 <td>
 <%= link_to(article) do %>
-　<img src=<%= article.user.image %> class = "icon_image">
+  <img src=<%= article.user.image %> class = "icon_image">
 <% end %>
-
 </td>
 <td><%= article.user.name %></td>
 <td><%= article.title.truncate(20) %></td>
@@ -30,10 +29,12 @@
   </td>
 <% end %>
 <td>
-  <div id="article-<%= article.id %>"><%= render partial: 'stocks/stock_index', locals: { article: article } %></div>
+  <div id="article-<%= article.id %>"><%= render partial: 'stocks/stock', locals: { article: article } %></div>
 </td>
-<td><%= render partial: "articles/follow_form", locals: { user: article.user } %></td>
-<%# binding.irb %>
+<%# <td> %>
+<%# <%= render partial: "articles/follow_form", locals: { user: article.user } %> 
+<%# </td> %>
+
 <td><%= link_to '詳細', article, class: 'btn btn-default' %></td>
 <% if article.user == current_user %>
 <td><%= link_to "", edit_article_path(article), class: "glyphicon glyphicon-edit" %></td>

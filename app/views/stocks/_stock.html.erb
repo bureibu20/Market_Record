@@ -1,22 +1,12 @@
 <% if current_user != article.user && user_signed_in? %>
   <div class="stock">
     <% if article.stocked?(current_user) %>
-      <%# <h2>
-        <strong>
-        ストックを解除する
-        </strong>
-      </h2> %>
       <%= form_with model: article.stocks.find_by(user_id: current_user.id), method: :delete do |f| %>
         <%= button_tag(class: "btn btn-dark") do %>
           <i class="fas fa-folder-minus size"></i>
         <% end %>
       <% end %>
     <% else %>
-      <%# <h2>
-        <strong>
-        記事をストックする
-        </strong>
-      </h2> %>
       <%= form_with model: article.stocks.build do |f| %>
         <div><%= hidden_field_tag :article_id, article.id %></div>
         <%= button_tag(class: "btn btn-outline-dark") do %>

@@ -15,16 +15,16 @@ class User < ApplicationRecord
     likes.where(article_id: article_id).exists?
   end
 
-  def follow!(other_user)
-    active_relationships.create!(followed_id: other_user.id)
-  end
-  #フォローしているかどうかを確認する
-  def following?(other_user)
-    active_relationships.find_by(followed_id: other_user.id)
-  end
-  def unfollow!(other_user)
-    active_relationships.find_by(followed_id: other_user.id).destroy
-  end
+  # def follow!(other_user)
+  #   active_relationships.create!(followed_id: other_user.id)
+  # end
+  # #フォローしているかどうかを確認する
+  # def following?(other_user)
+  #   active_relationships.find_by(followed_id: other_user.id)
+  # end
+  # def unfollow!(other_user)
+  #   active_relationships.find_by(followed_id: other_user.id).destroy
+  # end
 
   mount_uploader :image, ImageUploader
   
