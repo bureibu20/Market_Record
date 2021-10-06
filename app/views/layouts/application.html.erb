@@ -38,7 +38,7 @@
               <li><a><%= link_to "お気に入りユーザー一覧", stocks_path, class: "glyphicon glyphicon-thumbs-up" %></a></li>
               <li><a><%= link_to "ストック記事一覧", stocks_path, class: "glyphicon glyphicon-paperclip" %></a></li>
               <li><a><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-ok" %></a></li>
-              <li><a><%= link_to "退会処理", articles_path, class: "glyphicon glyphicon-pencil" %></a></li>
+              <li><a><%= link_to "退会処理", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-pencil" %></a></li>
               <% if user_signed_in? %>
                 <% if current_user.admin? %>
                 <li role="separator" class="divider"></li>
