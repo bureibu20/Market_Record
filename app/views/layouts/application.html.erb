@@ -12,60 +12,60 @@
   </head>
 
   <body>
-    <header class="clearfix">
-      <ul>
-        <li class="left1">
-        <% if user_signed_in? %>
-          <%= link_to 'Market Record', articles_path, class: "link"%>
-        <% else %>  
-          <%= link_to 'Market Record', root_path, class: "link"%>
-          <% end %>
-        </li>
-        <li class="left2">
-          <%= form_with(model: @article, method: :get, local: true, ) do |form| %>
-            <%= form.text_field :search_title, placeholder:"記事タイトル検索" %>
-            <%= form.submit '検索' , name: 'search', class:"btn btn-warning" %>
-          <% end %>
-        </li>
-        <div class="float_right">
-          <li class="right_article_post"><%= link_to '記事を投稿する', new_article_path, class:"btn btn-warning btn-lg" if user_signed_in? %></li>
-          <li class="right_icon">
-            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-address-card size_top_icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a><%= link_to "アカウント詳細", edit_user_registration_path %></a></li>
-              <li><a><%= link_to "お気に入りユーザー一覧", stocks_path, class: "glyphicon glyphicon-thumbs-up" %></a></li>
-              <li><a><%= link_to "ストック記事一覧", stocks_path, class: "glyphicon glyphicon-paperclip" %></a></li>
-              <li><a><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-ok" %></a></li>
-              <li><a><%= link_to "退会処理", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-pencil" %></a></li>
-              <% if user_signed_in? %>
-                <% if current_user.admin? %>
-                <li role="separator" class="divider"></li>
-                <li><a><%= link_to "管理画面", rails_admin_path %></a></li>
-                <% end %>
-              <% end %>
-            </ul>
-          </li>
-
-        </div>  
-      </ul>
-    </header>
-    <br>
-    <br>
     <div class="main">
-    <% if notice %>
-      <p class="alert alert-notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-error"><%= alert %></p>
-    <% end %>
-    <%= yield %>
-    <br>
-    <br>
-    <footer>
-      <p class="footer-text">Copyright 2021 Market Record All Rights Reserved.</p>
-    </footer>
+      <header class="clearfix">
+        <ul>
+          <li class="left1">
+          <% if user_signed_in? %>
+            <%= link_to 'Market Record', articles_path, class: "link"%>
+          <% else %>  
+            <%= link_to 'Market Record', root_path, class: "link"%>
+            <% end %>
+          </li>
+          <li class="left2">
+            <%= form_with(model: @article, method: :get, local: true, ) do |form| %>
+              <%= form.text_field :search_title, placeholder:"記事タイトル検索" %>
+              <%= form.submit '検索' , name: 'search', class:"btn btn-warning" %>
+            <% end %>
+          </li>
+          <div class="float_right">
+            <li class="right_article_post"><%= link_to '記事を投稿する', new_article_path, class:"btn btn-warning btn-lg" if user_signed_in? %></li>
+            <li class="right_icon">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-address-card size_top_icon"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a><%= link_to "アカウント詳細", edit_user_registration_path %></a></li>
+                <li><a><%= link_to "お気に入りユーザー一覧", stocks_path, class: "glyphicon glyphicon-thumbs-up" %></a></li>
+                <li><a><%= link_to "ストック記事一覧", stocks_path, class: "glyphicon glyphicon-paperclip" %></a></li>
+                <li><a><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-ok" %></a></li>
+                <li><a><%= link_to "退会処理", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-pencil" %></a></li>
+                <% if user_signed_in? %>
+                  <% if current_user.admin? %>
+                  <li role="separator" class="divider"></li>
+                  <li><a><%= link_to "管理画面", rails_admin_path %></a></li>
+                  <% end %>
+                <% end %>
+              </ul>
+            </li>
 
+          </div>  
+        </ul>
+      </header>
+      <br>
+      <br>
+      <% if notice %>
+        <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-error"><%= alert %></p>
+      <% end %>
+      <%= yield %>
+      <br>
+      <br>
+      <footer>
+        <p class="footer-text">Copyright 2021 Market Record All Rights Reserved.</p>
+      </footer>
+    </div>  
   </body>
 </html>
