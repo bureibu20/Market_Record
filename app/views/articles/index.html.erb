@@ -7,6 +7,9 @@
       <h2> HOME </h2>
       <br>
       <br>
+      <%= link_to '記事一覧', articles_path, class: "link" if user_signed_in? %>
+      <br>
+      <br>
       <h3> いいねランキング </h3>
       <br>
       <br>
@@ -18,7 +21,7 @@
       <br>
       <br>
       <br>
-      <%= link_to 'ユーザー一覧', users_path if user_signed_in? %>
+      <%#= link_to 'ユーザー一覧', users_path if user_signed_in? %>
     </div>
     <div class="column col-lg-10">
       <table align="center">
