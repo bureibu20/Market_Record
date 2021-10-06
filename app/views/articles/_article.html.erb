@@ -31,9 +31,10 @@
 <td>
   <div id="article-<%= article.id %>"><%= render partial: 'stocks/stock', locals: { article: article } %></div>
 </td>
+
 <%# <td> %>
-<%# <%= render partial: "articles/follow_form", locals: { user: article.user } %> 
-<%# </td> %>
+<%#= render partial: "articles/follow_form", locals: { user: article.user } %>
+<%# </td>  %>
 
 <td><%= link_to '詳細', article, class: 'btn btn-default' %></td>
 <% if article.user == current_user %>
