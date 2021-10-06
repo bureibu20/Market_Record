@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
   belongs_to :user
-  is_impressionable counter_cache: true
+  is_impressionable 
   has_many :stocks, dependent: :destroy
   has_many :stock_users, through: :stocks, source: :user
   has_many :comments, dependent: :destroy

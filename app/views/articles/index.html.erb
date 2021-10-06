@@ -18,8 +18,7 @@
       <br>
       <br>
       <br>
-      <h3> ユーザー一覧 </h3>
-      <%= link_to 'user', users_path if user_signed_in? %>
+      <%= link_to 'ユーザー一覧', users_path if user_signed_in? %>
     </div>
     <div class="column col-lg-10">
       <table align="center">
@@ -32,14 +31,14 @@
             <th> タグ </th>
             <th> 閲覧数 </th>
             <th> いいね </th>
-            <th colspan="5"></th>
+            <th> ストック </th>
+            <th colspan="8"></th>
           </tr>
         </thead>
 
         <tbody>
           <% @articles.each do |article| %>
             <tr id="article_<%= article.id %>">
-              <%#= render "follow_form", user: article.user %>
               <%= render 'article', article: article %>
             </tr>
           <% end %>

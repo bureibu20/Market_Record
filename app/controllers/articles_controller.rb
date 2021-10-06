@@ -8,7 +8,6 @@ class ArticlesController < ApplicationController
     @articles = Article.all
     @rank_articles = Article.order(impressions_count: 'DESC')
     @articles = current_user.articles.search_title(params[:search_title]).page(params[:page]) if params[:search_title].present? 
-    
   end
 
   # GET /articles/1 or /articles/1.json
@@ -67,6 +66,8 @@ class ArticlesController < ApplicationController
 
   def top
   end
+  
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -78,4 +79,5 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :content, :impressions_count, :user_id, { tag_ids: [] })
     end
+    
 end

@@ -5,6 +5,8 @@
   }
   body{
     text-align: center;
+    padding-bottom: 70px;
+    
   }
   header {
     height: 80px;
@@ -41,7 +43,7 @@
     }
   }
   
-  .footer {
+  footer {
     height: 70px;
     width: 100%;
     background-color: #2B2B2B;
@@ -80,4 +82,8 @@
   }
   .image_form{
     margin: auto;
+    text-decoration: none;
+  }
+  .link_line{
+    text-decoration: none;
   }
