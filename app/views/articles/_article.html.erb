@@ -12,7 +12,7 @@
     <% if article.tags.count >= 2 %>
       <%= "..." %>
     <% end %>
-    <%# <% break %> %>
+    <% break %>
   <% end %>
   
 </td>
@@ -41,9 +41,9 @@
 <%#= render partial: "articles/follow_form", locals: { user: article.user } %>
 <%# </td>  %>
 
-<td>
-<%= link_to '詳細', article, class: 'btn btn-default' %>
-</td>
+<%# <td> %>
+<%#= link_to '詳細', article, class: 'btn btn-default' %>
+<%# </td> %>
 <% if article.user == current_user %>
 <td class="align-middle"><%= link_to "", edit_article_path(article), class: "glyphicon glyphicon-edit" %></td>
 <td class="align-middle"><%= link_to "", article, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "glyphicon glyphicon-trash delete-icon", title: "削除する" %></td>
