@@ -5,6 +5,7 @@
 <br>
 <p>
   <strong>ニックネーム:</strong>
+  <br>
   <%= @article.user.name %></a>
 </p>
 <br>
@@ -13,18 +14,24 @@
   <strong>Title:</strong>
 </p>
 <div class="show_title">
-<p>
   <%= @article.title %>
-</p>
 </div>
-
+<br>
+<br>
+<br>
 <p>
   <strong>タグ一覧:</strong>
+</p>
+<div class="show_tag">
+<p>
    <% @article.tags.each do |tag| %>
     <%= tag.name %>
   <% end %>
 </p>
-
+</div>
+<br>
+<br>
+<br>
 <p>
   <strong>Content:</strong>
 </p>
