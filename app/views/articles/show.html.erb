@@ -15,7 +15,9 @@
 
 <p>
   <strong>タグ一覧:</strong>
-  <%= @article.tags.name %>
+   <% @article.tags.each do |tag| %>
+    <%= tag.name %>
+  <% end %>
 </p>
 
 <p>
