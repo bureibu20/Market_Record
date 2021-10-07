@@ -1,7 +1,7 @@
 
   html{
     height: 100%;
-    font-size: 62.5%;
+    font-size: 80%;
   }
   body{
     text-align: center;
@@ -34,7 +34,7 @@
   }
   .right_article_post{
     float: left;
-    padding: 30px 40px; 
+    padding: 25px 40px; 
   }
   .right_icon{
     float: left;
@@ -92,4 +92,10 @@
   }
   .link_line{
     text-decoration: none;
+  }
+  .tag_field{
+    border: solid 0.3px #2B2B2B;
+    display: inline-block;
+    padding: 0.5em 2em;
+    margin: 2em 0; 
   }
