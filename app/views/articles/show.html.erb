@@ -14,6 +14,11 @@
 </p>
 
 <p>
+  <strong>タグ一覧:</strong>
+  <%= @article.tags.name %>
+</p>
+
+<p>
   <strong>Content:</strong>
   <%= markdown(@article.content) %>
 </p>
