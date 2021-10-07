@@ -7,35 +7,40 @@
       <h2> HOME </h2>
       <br>
       <br>
-      <%= link_to '記事一覧', articles_path, class: "link" if user_signed_in? %>
-      <br>
+      <%#= link_to '記事一覧', articles_path, {class: "index_link"} if user_signed_in? %>
+      <%# <br> %>
+      <%# <br> %>
+      <%# <br> %>
       <br>
       <h5> いいねランキング </h5>
       <br>
       <br>
+      <br>
       <h5> トレンドライン </h5>
-      <% @rank_articles.each do |t| %>
-        PV数
-        <%= t.impressions_count %>
-      <% end %>
+      <%# @rank_articles.each do |t| %>
+        <%# PV数 %>
+        <%#= t.impressions_count %>
+      <%# end %>
       <br>
       <br>
       <br>
       <%#= link_to 'ユーザー一覧', users_path if user_signed_in? %>
     </div>
-    <div class="column col-lg-10">
-      <table align="center">
+    <div >
+      <table class="table table-hover" >
         <thead>
           <tr>
             <th>icon</th>
-            <th>User</th>
+            <th>ニックネーム</th>
             <th>Title</th>
             <th>Content</th>
             <th> タグ </th>
             <th> 閲覧数 </th>
             <th> いいね </th>
             <th> ストック </th>
-            <th colspan="8"></th>
+            <th>  </th>
+            <th>  </th>
+            <th>  </th>            
           </tr>
         </thead>
 
