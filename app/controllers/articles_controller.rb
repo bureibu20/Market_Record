@@ -5,8 +5,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
-    @rank_articles = Article.order(impressions_count: 'DESC')
+    @articles = Article.all.order(created_at: "DESC")
+    # @rank_articles = Article.order(impressions_count: 'DESC')
     @articles = current_user.articles.search_title(params[:search_title]).page(params[:page]) if params[:search_title].present? 
   end
 
