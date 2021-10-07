@@ -8,6 +8,9 @@ class Article < ApplicationRecord
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
   scope :search_title, -> (title) { where("title LIKE ?", "%#{title}%") }
+
+  validates :title, presence: true
+  validates :content, presence: true
   # 現在ログインしているユーザーidを受け取り、記事をストックする
   def stock(user)
     stocks.create(user_id: user.id)

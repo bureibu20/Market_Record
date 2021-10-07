@@ -5,6 +5,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find([:id])
   end
+
+  def update
+    binding.irb  
+  end
   
   private
   def set_user
