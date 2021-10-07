@@ -106,4 +106,14 @@
     list-style-type: none;
     padding: 0;
   }
-  
+  .show_title{
+    display: inline-block;
+    border: 1px solid #000000;
+    width: 60%;
+  }
+  .show_content{
+    display: inline-block;
+    border: 1px solid #000000;
+    width: 60%;
+    text-align: left;
+  }
