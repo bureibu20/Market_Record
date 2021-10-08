@@ -1,8 +1,17 @@
-<td class="align-middle">
-<%= link_to(article) do %>
-  <img src=<%= article.user.image %> class = "icon_image">
+<% if article.user.image? %>
+  <td class="align-middle">
+    <%= link_to(article) do %>
+      <img src=<%= article.user.image %> class = "icon_image">
+    <% end %>
+  </td>
+<% else %>
+  <td class="align-middle">
+    <%= link_to(article) do %>
+      <img src="/assets/default.png" class = "icon_image">
+    <% end %>
+  </td>
 <% end %>
-</td>
+
 <td class="align-middle"><%= article.user.name %></td>
 <td class="align-middle"><%= article.title.truncate(20) %></td>
 <td class="align-middle"><%= article.content.truncate(30) %></td>
