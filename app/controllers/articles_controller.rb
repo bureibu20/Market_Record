@@ -3,14 +3,14 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: :top
   impressionist actions: [:index, :show]
 
-  # GET /articles or /articles.json
+  
   def index
     @articles = Article.all.order(created_at: "DESC")
     # @rank_articles = Article.order(impressions_count: 'DESC')
-    @articles = current_user.articles.search_title(params[:search_title]).page(params[:page]) if params[:search_title].present? 
+    @articles = Article.all.search_title(params[:search_title]).page(params[:page]) if params[:search_title].present? 
+    
   end
 
-  # GET /articles/1 or /articles/1.json
   def show
     @article = Article.find(params[:id])
     impressionist(@article, nil, unique: [:ip_address]) 
@@ -18,16 +18,13 @@ class ArticlesController < ApplicationController
     @comment = @article.comments.build
   end
 
-  # GET /articles/new
   def new
     @article = Article.new
   end
 
-  # GET /articles/1/edit
   def edit
   end
 
-  # POST /articles or /articles.json
   def create
     @article = current_user.articles.build(article_params) 
 
@@ -42,7 +39,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /articles/1 or /articles/1.json
   def update
     respond_to do |format|
       if @article.update(article_params)
@@ -55,7 +51,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # DELETE /articles/1 or /articles/1.json
   def destroy
     @article.destroy
     respond_to do |format|
