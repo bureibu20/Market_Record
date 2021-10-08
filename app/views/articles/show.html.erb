@@ -23,11 +23,9 @@
   <strong>タグ一覧</strong>
 </p>
 <div class="show_tag">
-<p>
    <% @article.tags.each do |tag| %>
-    <%= tag.name %>
+    <i class="fas fa-tags"></i><%= tag.name %>
   <% end %>
-</p>
 </div>
 <br>
 <br>
