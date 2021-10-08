@@ -1,28 +1,68 @@
 <br>
 <br>
-<table border="1" align="center">
-  <thead>
-  <tr>
-    <th>投稿者</th>
-    <th>タイトル</th>
-    <th>内容</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% if @stocks.present? %>
-    <% @stocks.each do |stock| %>
-    
-      <tr>
-        <td><%= stock.article.user.name %></td>
-        <td><%= stock.article.title %></td>
-        <td><%= stock.article.content %></td>
-      </tr>
-    <% end %>
-  <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="column col-lg-12">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>icon</th>
+          <th>ニックネーム</th>
+          <th>Title</th>
+          <th>Content</th>
+          <th> タグ </th>
+          <th> 閲覧数 </th>
+          <th> いいね </th>
+        </tr>
+        </thead>
+        <tbody>
+        <% if @stocks.present? %>
+          <% @stocks.each do |stock| %>
+          
+            <tr>
+              <td class="align-middle">
+              <%= link_to(stock.article) do %>
+                <img src=<%= stock.article.user.image %> class = "icon_image">
+              <% end %>
+              </td>
+              <td class="align-middle"><%= stock.article.user.name %></td>
+              <td class="align-middle"><%= stock.article.title.truncate(20) %></td>
+              <td class="align-middle"><%= stock.article.content.truncate(30) %></td>
 
-<!-- 10件毎にページネーション -->
-<div class="paginate">
-  <%= paginate @stock_articles %>
+              <td class="align-middle">
+                <% stock.article.tags.each do |tag| %>
+                  <i class="fas fa-tags"><%= tag.name %></i>
+                  <% if stock.article.tags.count >= 2 %>
+                    <%= "..." %>
+                  <% end %>
+                  <% break %>
+              <% end %>
+              </td>
+              <td class="align-middle"><i class="fas fa-eye"></i><%= stock.article.impressions_count %></td>
+              <% if current_user.liked_by?(stock.article.id) %>
+              <td class="align-middle">
+                <%= link_to destroy_like_path(stock.article), class: "like-link", method: :DELETE, remote: true do %>
+                  <i class="fa fa-heart unlike-btn"></i>
+                <% end %>
+                <%= stock.article.likes.count %>
+              </td>
+              <% else %>
+              <td class="align-middle">
+                <%= link_to create_like_path(stock.article), class: "like-link", method: :POST, remote: true do %>
+                  <i class="fa fa-heart like-btn"></i>
+                <% end %>
+                <%= stock.article.likes.count %>
+              </td>
+              <% end %>
+            </tr>
+          <% end %>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
+      <!-- 10件毎にページネーション -->
+      <div class="paginate">
+        <%= paginate @stock_articles %>
+      </div>
