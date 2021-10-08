@@ -3,37 +3,47 @@
 <img src=<%= @article.user.image %> class = "icon_image"><a class='article_user_name'>
 <br>
 <br>
-<p>
-  <strong>ニックネーム:</strong>
-  <%= @article.user.name %></a>
-</p>
+<strong>ニックネーム</strong>
+<div class="text-primary">
+  <strong><%= @article.user.name %></strong>
+</div>
+<br>
 <br>
 <p>
-  <strong>Title:</strong>
+  <strong>Title</strong>
+</p>
+<div class="show_title">
   <%= @article.title %>
-</p>
-
+</div>
+<br>
+<br>
+<br>
 <p>
-  <strong>タグ一覧:</strong>
+  <strong>タグ一覧</strong>
+</p>
+<div class="show_tag">
    <% @article.tags.each do |tag| %>
-    <%= tag.name %>
+    <i class="fas fa-tags"></i><%= tag.name %>
   <% end %>
-</p>
-
+</div>
+<br>
+<br>
+<br>
 <p>
-  <strong>Content:</strong>
+  <strong>Content</strong>
+</p>
+<div class="show_content">
+<p>
   <%= markdown(@article.content) %>
 </p>
+</div>
 
+<br>
+<br>
 <p>
-  <strong>User:</strong>
-  <%= @article.user_id %>
-</p>
-
-<p>
-  <strong>Article view:</strong>
+  <strong>閲覧数</strong>
   <%= @article.impressions_count %>
-  <%# binding.irb%>
+  
 </p>
 
 <div id="article-<%= @article.id %>">

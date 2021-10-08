@@ -32,13 +32,19 @@
 <div class="container">
   <div class="row">    
     <div class="col-md-12">
-      <div>
-      <a class="nav-link" href=""><%= link_to " アカウント作成 ", new_user_registration_path, class:"btn btn-outline-primary" %></a>
-      </div>
-      <br>
-      <div>
-      <a class="nav-link" href=""><%= link_to " ログインする ", new_user_session_path, class:"btn btn-outline-primary" %></a>
-      </div>
+      <% if  user_signed_in? %>
+        <div>
+          <a class="nav-link" href=""><%= link_to " 記事一覧 ", articles_path, class:"btn btn-outline-primary" %></a>
+        </div>
+      <% else %>
+        <div>
+          <a class="nav-link" href=""><%= link_to " アカウント作成 ", new_user_registration_path, class:"btn btn-outline-primary" %></a>
+        </div>
+        <br>
+        <div>
+          <a class="nav-link" href=""><%= link_to " ログインする ", new_user_session_path, class:"btn btn-outline-primary" %></a>
+        </div>
+      <% end %>
       <br>
       <br>
       <div>

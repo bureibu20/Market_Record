@@ -8,7 +8,7 @@
 <td class="align-middle"><%= article.content.truncate(30) %></td>
 <td class="align-middle">
   <% article.tags.each do |tag| %>
-    <i class="fas fa-tags"><%= tag.name %>
+    <i class="fas fa-tags"><%= tag.name %></i>
     <% if article.tags.count >= 2 %>
       <%= "..." %>
     <% end %>
