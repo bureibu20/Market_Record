@@ -1,4 +1,5 @@
 class StocksController < ApplicationController
+  before_action :authenticate_user!, except: :top
   def index
     # ログインユーザーがストックした記事一覧を取得
     stock_articles = Stock.get_stock_articles(current_user)
