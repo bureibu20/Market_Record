@@ -30,17 +30,22 @@
           </li>
           <div class="float_right">
             <li class="right_article_post"><%= link_to '記事を投稿する', new_article_path, class:"btn btn-warning btn-lg" if user_signed_in? %></li>
+            <% if user_signed_in? %>
             <li class="right_icon">
               <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-address-card size_top_icon"></i>
               </a>
-              <% if user_signed_in? %>
+              
               <ul class="dropdown-menu">
-                  <li><a><%= link_to "アカウント編集", edit_user_registration_path %></a></li>
-                  <li><a><%= link_to "お気に入りユーザー一覧", stocks_path, class: "glyphicon glyphicon-thumbs-up" %></a></li>
-                  <li><a><%= link_to "ストック記事一覧", stocks_path, class: "glyphicon glyphicon-paperclip" %></a></li>
-                  <li><a><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-ok" %></a></li>
-                  <li><a><%= link_to "退会処理", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-pencil" %></a></li>                  
+                  <li><%= link_to "アカウント編集", edit_user_registration_path %></li>
+                  <%# <li> %>
+                    <%#= link_to "お気に入りユーザー一覧", stocks_path, class: "glyphicon glyphicon-thumbs-up" %>
+                  <%# </li> %>
+                  <li><%= link_to "ストック記事一覧", stocks_path, class: "glyphicon glyphicon-paperclip" %></li>
+                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-ok" %></li>
+                  <%# <li> %>
+                    <%#= link_to "退会処理", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-pencil" %>
+                  <%# </li> %>
                 <% if user_signed_in? %>
                   <% if current_user.admin? %>
                   <li role="separator" class="divider"></li>
@@ -48,9 +53,9 @@
                   <% end %>
                 <% end %>
               </ul>
-              <% end %>  
+              
             </li>
-
+            <% end %>  
           </div>  
         </ul>
       </header>
