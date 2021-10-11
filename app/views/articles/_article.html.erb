@@ -8,13 +8,13 @@
   </td>
 <% end %>
 
+
 <td class="align-middle"><%= article.user.name %></td>
-<td class="align-middle">
-  
+
+<td class="align-middle">  
   <%= link_to((article), class: "article_link") do %>
     <%= article.title.truncate(20) %>
   <% end %>
-  
 </td>
 <td class="align-middle">
   <%= link_to((article), class: "article_link") do %>
