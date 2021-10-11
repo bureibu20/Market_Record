@@ -61,6 +61,9 @@ class ArticlesController < ApplicationController
 
   def top
   end
+
+  def guide
+  end
   
   
 
