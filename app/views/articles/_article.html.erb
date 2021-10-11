@@ -11,16 +11,16 @@
 
 <td class="align-middle"><%= article.user.name %></td>
 
-<td class="align-middle">  
+<td class="align-middle title_size">  
   <%= link_to((article), class: "article_link") do %>
-    <%= article.title.truncate(20) %>
+    <%= article.title.truncate(40) %>
   <% end %>
 </td>
-<td class="align-middle">
-  <%= link_to((article), class: "article_link") do %>
-    <%= article.content.truncate(30) %>
-  <% end %>
-</td>
+<%# <td class="align-middle"> %>
+  <%#= link_to((article), class: "article_link") do %>
+    <%#= article.content.truncate(30) %>
+  <%# end %>
+<%# </td> %>
 
 <td class="align-middle">
   <% article.tags.each do |tag| %>

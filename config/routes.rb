@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]  
   resources :stocks, only: %i(index create destroy)
   resources :articles do
+    collection do
+      get :guide
+    end
     resources :comments
   end
   resources :relationships, only: [:create, :destroy]

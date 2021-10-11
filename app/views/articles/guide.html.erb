@@ -1,60 +1,76 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-        <div claass="top_explain">
-          <h2>
-            <strong>
-            <br>
-            Market Recordは投資に関する知識を記録・共有するためのサービスです。
-            <br>
-            <br>
-            投資家の皆さんが銘柄選びや、決算書の読み方、売買タイミング、
-            <br>
-            <br>
-            リスク管理まで投資に必要なノウハウを共有することができます。
-            <br>
-            <br>
-            知識を共有し、自分の考えを整理することで、
-            <br>
-            <br>
-            新しい発見や多くの人がより良い選択ができる、
-            <br>
-            <br>
-            価値ある情報が集まるコミュニティを創出することが目的です。
-            </strong>
-          </h2>
-        </div>
-    </div>
+<div class="guides-body">
+<h2 class="guides-main-title">Market Recordの使い方</h2>
+<br>
+<br>
+<h4 ><i class="fas fa-user-plus"></i><b> アカウント登録について</b></h4>
+<div class="guides-content">
+  <p>以下のアカウント作成ボタンから「アカウント登録」ができます。</p>
+  <div>
+    <%= link_to " アカウント作成 ", new_user_registration_path, class:"btn btn-outline-primary" %>
   </div>
+  <br>
+  <p>アカウント登録をしてログインすると、記事の投稿やストック（お気に入り記事）の登録など</p>
+  <p>Market Recordの全ての機能が使えるようになります</p>
 </div>
 <br>
 <br>
-<div class="container">
-  <div class="row">    
-    <div class="col-md-12">
-      <% if  user_signed_in? %>
-        <div>
-          <a class="nav-link" href=""><%= link_to " 記事一覧 ", articles_path, class:"btn btn-outline-primary" %></a>
-        </div>
-      <% else %>
-        <div>
-          <a class="nav-link" href=""><%= link_to " アカウント作成 ", new_user_registration_path, class:"btn btn-outline-primary" %></a>
-        </div>
-        <br>
-        <div>
-          <a class="nav-link" href=""><%= link_to " ログインする ", new_user_session_path, class:"btn btn-outline-primary" %></a>
-        </div>
-      <% end %>
-      <br>
-      <br>
-      <div>
-      <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class:"btn btn-outline-primary" %>
-      </div>
-      <br>
-      <br>
-      <div>
-      <%= link_to '管理者ゲストログイン', users_guest_admin_sign_in_path, method: :post, class:"btn btn-outline-primary" %>
-      </div>
-    </div>
-  </div>
+<h4><i class="fas fa-user-edit"></i><b> 記事投稿について</b></h4>
+<div class="guides-content">
+  <p>ログイン後、画面右上の「記事を投稿する」から記事の投稿ができます。</p>
+  <p>内容が伝わりやすいようにタイトルを工夫してつけてみて下さい。</p>
+  <p>選択タグを決定し、記事の内容を書き込みましょう。記事はマークダウン記法にも対応してます。</p>
+</div>
+<br>
+<br>
+<h4><i class="fas fa-exclamation-circle"></i><b> マークダウン記法について</b></h4>
+<div class="guides-content">
+  <p>特定の記号を使って、段落や見出し、装飾などを自動的に表示できます。</p>
+  <p>記事に＃、``` ```、などの記号をつかって記事を装飾してみましょう。</p>
+  <p>詳しくは「マークダウン記法 基本的な使い方」でググってみて下さい。</p>
+</div>
+<br>
+<br>
+<h4><i class="fas fa-user-check"></i><b> 記事の確認について</b></h4>
+<div class="guides-content">
+  <p>記事一覧の記事タイトルをクリックすると記事の詳細画面に移行します。</p>
+  <p>詳細画面からはコメントの投稿もできます。</p>
+  <p></p>
+</div>
+<br>
+<br>
+<h4><i class="fas fa-folder-plus fa-lg"></i><b> 記事のストックについて</b></h4>
+<div class="guides-content">
+  <p>記事をもう一度読み返したい場合に記事のストックができます。後からみたい記事をストック記事一覧で確認することができます。</p>
+  <p>記事右側の <i class="fas fa-folder-plus size"></i> アイコンを押すことで記事を保存できます。</p>
+  <p>画面右上の<i class="fas fa-address-card fa-2x "></i>アイコンを押すと、「ストック記事一覧」をチェックすることができます！</p>
+</div>
+<br>
+<br>
+<%# <h4><i class="fas fa-user-astronaut"></i><b> お気に入りユーザーについて</b></h4> %>
+<%# <div class="guides-content"> %>
+  <%# <p>記事詳細画面から <i class="glyphicon glyphicon-link follow-btn"></i> を押すとお気に入りユーザーの登録ができます。登録したユーザーの記事一覧を、</p> %>
+  <%# <p>画面右上の  %>
+    <%#= image_tag "default.png", class: "guide_icon_image" %>
+     <%# アイコンの「お気に入りユーザ一覧」からチェックすることができます！</p> %>
+<%# </div> %>
+
+<h4><i class="fas fa-heart"></i><b> 「いいね」について</b></h4>
+<div class="guides-content">
+  <p>記事一覧の右側にある<i class="fas fa-heart"></i>アイコンを押すと投稿者に「いいね」を付けれます。</p>
+  <p>記事の内容が参考になった場合や、共感した場合など、記事に好感がある場合には「いいね」を押して下さい</p>
+  <p>記事一覧ページの左側から「いいねランキング」もチェックすることができます</p>
+</div>
+<br>
+<br>
+<h4><i class="fas fa-eye"></i><b> 閲覧数について</b></h4>
+<div class="guides-content">
+  <p>記事一覧画面右側の <i class="fas fa-eye"></i> アイコンにどれだけの記事が読まれたのかを判断する数字が表示されます.</p>
+  <p>数字を確認することで、どの記事がよく見られているかがひと目で分かります。</p>
+  <p>どの記事が読まれているのか確認するには、記事一覧画面の左側にある「閲覧数ランキング」をチェックしてみてください。</p>
+</div>
+<br>
+<br>
+<div class="guides-footer">
+  <%= link_to "Maeket Recordについて", root_path, class:"btn btn-outline-primary" %>
+</div>
 </div>
