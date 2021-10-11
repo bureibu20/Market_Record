@@ -1,6 +1,15 @@
 <br>
 <br>
-<img src=<%= @article.user.image %> class = "icon_image"><a class='article_user_name'>
+
+<% if @article.user.image? %>
+  <td class="align-middle">
+    <img src=<%= @article.user.image %> class = "icon_image">
+  </td>
+<% else %>
+  <td class="align-middle">
+    <img src="/assets/default.png" class = "icon_image">
+  </td>
+<% end %>
 <br>
 <br>
 <strong>ニックネーム</strong>

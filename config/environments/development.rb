@@ -5,7 +5,7 @@ Rails.application.configure do
 
   
   #erroeページを表示させない場合には、trueに変える
-  config.consider_all_requests_local = false
+  config.consider_all_requests_local = true
 
   
   if Rails.root.join('tmp', 'caching-dev.txt').exist?

@@ -1,20 +1,27 @@
 <% if article.user.image? %>
   <td class="align-middle">
-    <%= link_to(article) do %>
-      <img src=<%= article.user.image %> class = "icon_image">
-    <% end %>
+    <img src=<%= article.user.image %> class = "icon_image">
   </td>
 <% else %>
   <td class="align-middle">
-    <%= link_to(article) do %>
-      <img src="/assets/default.png" class = "icon_image">
-    <% end %>
+    <img src="/assets/default.png" class = "icon_image">
   </td>
 <% end %>
 
 <td class="align-middle"><%= article.user.name %></td>
-<td class="align-middle"><%= article.title.truncate(20) %></td>
-<td class="align-middle"><%= article.content.truncate(30) %></td>
+<td class="align-middle">
+  
+  <%= link_to((article), class: "article_link") do %>
+    <%= article.title.truncate(20) %>
+  <% end %>
+  
+</td>
+<td class="align-middle">
+  <%= link_to((article), class: "article_link") do %>
+    <%= article.content.truncate(30) %>
+  <% end %>
+</td>
+
 <td class="align-middle">
   <% article.tags.each do |tag| %>
     <i class="fas fa-tags"><%= tag.name %></i>
