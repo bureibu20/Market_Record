@@ -51,14 +51,16 @@
 <br>
 <p>
   <strong>閲覧数</strong>
-  <%= @article.impressions_count %>
+  <i class="fas fa-eye"></i><%= @article.impressions_count %>
   
 </p>
-
+<br>
 <div id="article-<%= @article.id %>">
     <%= render partial: 'stocks/stock', locals: { article: @article } %>
 </div>
 <br>
+<br>
+<hr width="70%">
 <p>コメント一覧</p>
 
 <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->

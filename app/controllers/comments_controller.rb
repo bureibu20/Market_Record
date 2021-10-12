@@ -1,12 +1,17 @@
 class CommentsController < ApplicationController
   before_action :set_article, only: [:create, :edit, :update]
   def create
+    
     @comment = @article.comments.build(comment_params)
+    @comment.user_id = current_user.id
+    
     respond_to do |format|
+      
       if @comment.save
+        
         format.js { render :index }
       else
-        format.html { redirect_to article_path(@article), notice: '投稿できませんでした...' }
+        format.html { redirect_to article_path(@article), notice: 'コメントを入力してください' }
       end
     end
   end
@@ -39,7 +44,7 @@ class CommentsController < ApplicationController
   end
   private
   def comment_params
-    params.require(:comment).permit(:article_id, :content)
+    params.require(:comment).permit(:content)
   end
   def set_article
     @article = Article.find(params[:article_id])
