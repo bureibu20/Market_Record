@@ -18,7 +18,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def edit
   #   super
   # end
+  protected
 
+  def after_update_path_for(resource)
+    # 自分で設定した「マイページ」へのパス
+    articles_path
+  end
   # PUT /resource
   # def update
   #   super
