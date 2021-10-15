@@ -80,7 +80,7 @@ RSpec.describe '記事機能', type: :system do
       click_button 'ログイン'    
     end
     context '記事を削除した場合' do      
-      it '削除成功の表示がされる' do
+      it '削除表示がされる' do
         page.accept_confirm do
           all(".glyphicon-trash")[0].click
         end

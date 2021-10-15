@@ -17,17 +17,20 @@ RSpec.describe 'コメント機能', type: :system do
       fill_in 'user_email', with: 'user1@gmail.com'
       fill_in 'user_password', with: '111111'
       click_button 'ログイン'  
-      visit article_path(@article)
-      fill_in "comment_content", with: "テストコメント"
-      click_button '登録する'
     end
     context 'コメントを投稿した場合' do
       it '投稿したコメントが表示される' do
+        visit article_path(@article)
+        fill_in "comment_content", with: "テストコメント"
+        click_button '登録する'
         expect(page).to have_content 'テストコメント'
       end
     end
     context 'コメントを削除した場合' do
       it 'コメントが削除され表示されなくなる' do
+        visit article_path(@article)
+        fill_in "comment_content", with: "テストコメント"
+        click_button '登録する'
         page.accept_confirm do
           all(".glyphicon-trash")[0].click
         end
