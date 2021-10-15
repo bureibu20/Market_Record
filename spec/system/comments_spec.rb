@@ -18,21 +18,21 @@ RSpec.describe 'コメント機能', type: :system do
       fill_in 'user_password', with: '111111'
       click_button 'ログイン'  
       visit article_path(@article)
-      binding.irb
-      fill_in "コメントを入力する", with: "新しいコメント"
-      click_button '投稿'
+      fill_in "comment_content", with: "テストコメント"
+      click_button '登録する'
     end
     context 'コメントを投稿した場合' do
       it '投稿したコメントが表示される' do
-        expect(page).to have_content '新しいコメント'
+        expect(page).to have_content 'テストコメント'
       end
     end
     context 'コメントを削除した場合' do
       it 'コメントが削除され表示されなくなる' do
-        find(".delete-icon").click
-        expect(page).not_to have_content '新しいコメント'
+        page.accept_confirm do
+          all(".glyphicon-trash")[0].click
+        end
+        expect(page).not_to have_content 'テストコメント'
       end
     end
   end
-
 end
