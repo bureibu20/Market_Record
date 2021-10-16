@@ -15,19 +15,18 @@ RSpec.describe 'ストック機能', type: :system do
   describe 'ストック機能' do
     before do
       visit new_user_session_path
-      fill_in 'メールアドレス', with: 'user_a@dic.com'
-      fill_in 'パスワード', with: 'password'
-      click_button 'ログイン'
-      find(".btn-stock").click
+      fill_in 'user_email', with: 'user1@gmail.com'
+      fill_in 'user_password', with: '111111'
+      click_button 'ログイン'  
+      find(".fa-folder-plus").click
       find(".dropdown-toggle").click
-      click_link 'ストック一覧'
+      click_link 'ストック記事一覧'      
     end
 
     context '記事をストックした場合' do
       it 'ストックした記事が表示される' do
-        expect(page).to have_content 'foo'
+        expect(page).to have_content 'test_title2'
       end
     end
   end
-
 end
