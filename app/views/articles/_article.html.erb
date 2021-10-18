@@ -62,7 +62,7 @@
 <%# </td> %>
 <% if article.user == current_user %>
 <td class="align-middle"><%= link_to "", edit_article_path(article), class: "glyphicon glyphicon-edit" %></td>
-<td class="align-middle"><%= link_to "", article, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "glyphicon glyphicon-trash delete-icon", title: "削除する" %></td>
+<td class="align-middle"><%= link_to "", article, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "glyphicon glyphicon-trash delete-icon" %></td>
 <% end %>
 
 
