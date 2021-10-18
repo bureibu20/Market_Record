@@ -29,6 +29,7 @@
               </td>
               <td class="align-middle"><%= stock.article.user.name %></td>
               <td class="align-middle">
+              
                 <%= link_to((articles_path), class: "article_link") do %>
                   <%= stock.article.title.truncate(20) %>
                 <% end %>
