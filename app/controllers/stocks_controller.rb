@@ -7,6 +7,7 @@ class StocksController < ApplicationController
     @stock_articles = Kaminari.paginate_array(stock_articles).page(params[:page]).per(10)
     @stocks = current_user.stocks
     
+    
   end
 
   def create

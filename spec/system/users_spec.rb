@@ -10,7 +10,7 @@ RSpec.describe 'ユーザー管理機能', type: :system do
         fill_in 'user_email', with: 'test_user@dic.com'
         fill_in 'user_password', with: '111111'
         fill_in 'user_password_confirmation', with: '111111'
-        click_button 'アカウント登録'
+        click_button '新規登録'
       end
       it '登録完了の表示がされる' do
         expect(page).to have_content 'アカウント登録が完了しました。'

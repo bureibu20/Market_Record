@@ -333,7 +333,6 @@ DEPENDENCIES
   rouge
   rspec-rails
   sass-rails (~> 5.0)
-  selenium-webdriver
   spring
   spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)
