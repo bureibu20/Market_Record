@@ -61,13 +61,23 @@ RSpec.describe '記事機能', type: :system do
       visit articles_path
       # click_link "/articles/@article.id/edit"
       # find(".glyphicon-edit").click
-      all(".glyphicon-edit")[0].click
-      fill_in "article_title", with: "edit_title"
-      click_button '更新する'
     end
     context '記事の編集をした場合' do
-      it '編集の内容が表示される' do
+      it '編集の内容が表示される' do 
+        all(".glyphicon-edit")[0].click
+        fill_in "article_title", with: "edit_title"
+        click_button '更新する'
         expect(page).to have_content 'edit_title'
+      end
+    end
+    context '他人の記事を編集をした場合' do
+      it '他人の投稿は編集できない' do 
+        expect(page).to_not have_content find(".glyphicon-edit")
+      end
+    end
+    context '他人の記事を編集をした場合' do
+      it '他人の投稿は削除できない' do 
+        expect(page).to_not have_content find(".delete-icon")
       end
     end
   end
