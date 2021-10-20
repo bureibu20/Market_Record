@@ -9,7 +9,6 @@
           <th>icon</th>
           <th>ニックネーム</th>
           <th>Title</th>
-          <th>Content</th>
           <th> タグ </th>
           <th> 閲覧数 </th>
           <th> いいね </th>
@@ -30,11 +29,10 @@
               <td class="align-middle"><%= stock.article.user.name %></td>
               <td class="align-middle">
               
-                <%= link_to((stock), class: "article_link") do %>
+                <%= link_to((stock.article), class: "article_link") do %>
                   <%= stock.article.title.truncate(20) %>
                 <% end %>
               </td>
-              <td class="align-middle"><%= stock.article.content.truncate(30) %></td>
 
               <td class="align-middle">
                 <% stock.article.tags.each do |tag| %>
@@ -46,7 +44,11 @@
               <% end %>
               </td>
               <td class="align-middle"><i class="fas fa-eye"></i><%= stock.article.impressions_count %></td>
+              
+
               <% if current_user.liked_by?(stock.article.id) %>
+              
+
               <td class="align-middle">
                 <%= link_to destroy_like_path(stock.article), class: "like-link", method: :DELETE, remote: true do %>
                   <i class="fa fa-heart unlike-btn"></i>
@@ -60,7 +62,12 @@
                 <% end %>
                 <%= stock.article.likes.count %>
               </td>
+              <td class="align-middle">
+  <div id="article-<%= stock.article.id %>"><%= render partial: 'stocks/stock_stock', locals: { article: stock.article } %></div>
+</td>
               <% end %>
+
+              
             </tr>
           <% end %>
         <% end %>

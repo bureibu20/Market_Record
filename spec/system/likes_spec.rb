@@ -23,8 +23,9 @@ RSpec.describe 'いいねランキング機能', type: :system do
     end
     context '記事にいいねをつけた場合' do
       it '1が表示される' do
+        
         td_list = page.all('.align-middle')[5]
-        sleep 3.0
+        sleep 1.0
         expect(first('.heart').text).to have_content 1
       end
     end

@@ -6,6 +6,8 @@
   body{
     text-align: center;
     height: 100%;
+    margin: 0 ;
+    
     
   }
   .main {
@@ -133,9 +135,21 @@
   .title_size{
     font-size: large;   
 }
+.main-header {
+  width: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+}
   // .rankking{
   //   border-right: solid 1px #e6e1e1;
   //   border-left: solid 1px #e6e1e1;
   // }
   
-  
+// .container{
+//   margin: 0 auto; 
+//   width: 100%;
+// }
+// .top_explain{
+//   width: 900px;
+//   margin: 0 auto;
+// }

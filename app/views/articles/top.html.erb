@@ -1,8 +1,15 @@
+<%= image_tag '/assets/stock.webp', size: '100x400', class:"card-img-top" %>
+<% if notice %>
+  <p class="alert alert-notice"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-error"><%= alert %></p>
+<% end %>
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-        <div claass="top_explain">
-          <h4>
+    <div class="col-md-12">      
+        <div class="top_explain">
+          <h5>
             <strong>
             <br>
             Market Recordは投資に関する知識を記録・共有するためのサービスです。
@@ -27,7 +34,7 @@
             <hr>
             <br>
             <div class="tops-footer"><%= link_to "Market Recordの使い方", guide_articles_path, class:"btn btn-outline-info" %></div>
-          </h4>
+          </h5>
         </div>
     </div>
   </div>

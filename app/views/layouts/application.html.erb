@@ -23,11 +23,16 @@
             <% end %>
           </li>
           <li class="left2">
-            <%= form_with(model: @article, method: :get, local: true, ) do |form| %>
-              <%= form.text_field :search_title, placeholder:"記事タイトル検索" %>
-              <%= form.submit '検索' , name: 'search', class:"btn btn-warning" %>
+          <%# if controller.controller_name == "article" %>
+            <% if user_signed_in? %>
+              <%= form_with(model: @article, method: :get, local: true, ) do |form| %>
+                <%= form.text_field :search_title, placeholder:"記事タイトル検索" %>
+                <%= form.submit '検索' , name: 'search', class:"btn btn-warning" %>
+              <% end %>
             <% end %>
+          <%# end %>
           </li>
+          
           <div class="float_right">
             <li class="right_article_post"><%= link_to '記事を投稿する', new_article_path, class:"btn btn-warning btn-lg" if user_signed_in? %></li>
             <% if user_signed_in? %>
@@ -60,14 +65,10 @@
           </div>  
         </ul>
       </header>
+      
+      
       <br>
       <br>
-      <% if notice %>
-        <p class="alert alert-notice"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p class="alert alert-error"><%= alert %></p>
-      <% end %>
       <%= yield %>
       <br>
       <br>
