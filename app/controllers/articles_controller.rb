@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   
   def index
     @articles = Article.all.order(created_at: "DESC")
-    # @rank_articles = Article.order(impressions_count: 'DESC')
+    @rank_articles = Article.order(impressions_count: 'DESC')
     @articles = Article.all.search_title(params[:search_title]).page(params[:page]) if params[:search_title].present? 
     
   end
@@ -65,6 +65,13 @@ class ArticlesController < ApplicationController
 
   def guide
   end
+
+  def iine_rank
+  end
+  
+  def trend_line
+  end
+
   
   
 

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :articles do
     collection do
       get :guide
+      get :iine_rank
+      get :trend_line
     end
     resources :comments
   end

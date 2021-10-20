@@ -6,7 +6,7 @@
     <div class="column col-lg-2">
       <div class="rankking">
       <%# <hr> %>
-      <h2> HOME </h2>
+      <h3> HOME </h3>
       <br>
       <br>
       <%#= link_to '記事一覧', articles_path, {class: "index_link"} if user_signed_in? %>
@@ -14,11 +14,12 @@
       <%# <br> %>
       <%# <br> %>
       <br>
-      <h5> いいねランキング </h5>
+      <%= link_to 'いいねランキング', iine_rank_articles_path if user_signed_in? %>
       <br>
       <br>
       <br>
-      <h5> トレンドライン </h5>
+      <%= link_to 'トレンドライン', trend_line_articles_path if user_signed_in? %>
+      
       <%# @rank_articles.each do |t| %>
         <%# PV数 %>
         <%#= t.impressions_count %>
