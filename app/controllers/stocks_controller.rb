@@ -41,4 +41,6 @@ class StocksController < ApplicationController
      end
    end
   end
+  def guide
+  end
 end

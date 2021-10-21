@@ -13,6 +13,11 @@ Rails.application.routes.draw do
     end
     resources :comments
   end
+  resources :stocks do
+    collection do
+      get :guide
+    end
+  end
   resources :relationships, only: [:create, :destroy]
 
   post 'like/:id' => 'likes#create', as: 'create_like'
