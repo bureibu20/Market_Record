@@ -9,4 +9,5 @@ class Stock < ApplicationRecord
   def self.get_stock_articles(user)
     self.where(user_id: user.id).map(&:article)
   end
+  scope :search_title, -> (title) { where("title LIKE ?", "%#{title}%") }
 end

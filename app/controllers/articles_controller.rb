@@ -7,9 +7,8 @@ class ArticlesController < ApplicationController
   
   def index
     @articles = Article.all.order(created_at: "DESC")
-    @rank_articles = Article.order(impressions_count: 'DESC')
     @articles = Article.all.search_title(params[:search_title]).page(params[:page]) if params[:search_title].present? 
-    
+    @rank_articles = Article.order(impressions_count: 'DESC')
   end
 
   def show

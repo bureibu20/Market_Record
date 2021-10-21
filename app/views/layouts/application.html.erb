@@ -31,14 +31,6 @@
               <% end %>
             <% end %>
           <% end %>
-          <% if controller.controller_name == "stocks" %>
-            <% if user_signed_in? %>
-              <%= form_with(model: @article, method: :get, local: true, ) do |form| %>
-                <%= form.text_field :search_title, placeholder:"記事タイトル検索" %>
-                <%= form.submit '検索' , name: 'search', class:"btn btn-warning" %>
-              <% end %>
-            <% end %>
-          <% end %>
           </li>
           
           <div class="float_right">
