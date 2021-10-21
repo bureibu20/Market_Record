@@ -5,7 +5,15 @@ class LikesController < ApplicationController
     Like.create(user_id: current_user.id, article_id: params[:id])
   end
 
+  def create_stock
+    Like.create(user_id: current_user.id, article_id: params[:id])
+  end
+
   def destroy
+    Like.find_by(user_id: current_user.id, article_id: params[:id]).destroy
+  end
+
+  def destroy_stock
     Like.find_by(user_id: current_user.id, article_id: params[:id]).destroy
   end
 

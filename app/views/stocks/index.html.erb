@@ -47,24 +47,21 @@
               
 
               <% if current_user.liked_by?(stock.article.id) %>
-              
-
               <td class="align-middle">
-                <%= link_to destroy_like_path(stock.article), class: "like-link", method: :DELETE, remote: true do %>
+                <%= link_to destroy_like_stock_path(stock.article), class: "like-link", method: :DELETE, remote: true do %>
                   <i class="fa fa-heart unlike-btn"></i>
                 <% end %>
                 <%= stock.article.likes.count %>
+                
               </td>
               <% else %>
               <td class="align-middle">
-                <%= link_to create_like_path(stock.article), class: "like-link", method: :POST, remote: true do %>
+                <%= link_to create_like_stock_path(stock.article), class: "like-link", method: :POST, remote: true do %>
                   <i class="fa fa-heart like-btn"></i>
                 <% end %>
                 <%= stock.article.likes.count %>
               </td>
-              <td class="align-middle">
-                <div id="article-<%= stock.article.id %>"><%= render partial: 'stocks/stock_stock', locals: { article: stock.article } %></div>
-              </td>
+
               <% end %>
 
               
