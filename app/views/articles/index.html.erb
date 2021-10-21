@@ -8,17 +8,25 @@
       <%# <hr> %>
       <h3> HOME </h3>
       <br>
-      <br>
+      <% if user_signed_in? %>
+        <%= form_with(model: @article, method: :get, local: true, ) do |form| %>
+          <%= form.text_field :search_title, placeholder:"記事タイトル検索",  size: "20x60" %>
+          <br>
+          <br>
+          <%= form.submit '検索' , name: 'search', class:"btn btn-warning" %>
+        <% end %>
+      <% end %>
       <%#= link_to '記事一覧', articles_path, {class: "index_link"} if user_signed_in? %>
       <%# <br> %>
       <%# <br> %>
       <%# <br> %>
       <br>
-      <%= link_to 'いいねランキング', iine_rank_articles_path if user_signed_in? %>
+      <br>
+      <%= link_to 'いいねランキング', iine_rank_articles_path, class:"btn btn-outline-primary" if user_signed_in? %>
       <br>
       <br>
       <br>
-      <%= link_to 'トレンドライン', trend_line_articles_path if user_signed_in? %>
+      <%= link_to 'トレンドライン', trend_line_articles_path, class:"btn btn-outline-primary" if user_signed_in? %>
       <%# <h3> PV数ランキング </h3> %>
       <%# @rank_articles.each do |t| %>
         <%# PV数 %>
